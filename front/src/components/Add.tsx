@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from "react";
-import {postCreateItem} from "../services/user.service";
+import userService from "../services/user.service";
 
 
  interface Item {
@@ -29,7 +29,7 @@ const AddItem = () => {
         status: false
     };
 
-    postCreateItem(data)
+    userService.postCreateItem(data)
       .then((response: any) => {
         setItem({
           name: response.data.name,

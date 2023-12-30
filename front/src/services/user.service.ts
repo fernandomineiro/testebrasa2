@@ -9,11 +9,28 @@ interface Item {
   status: Boolean,
 }
 
-export const getPublicContdsfsdent = () => {
-  return axios.get(API_URL + "products"), { headers: authHeader() };
+const getItem = () => {
+  return axios
+    .get(API_URL + "products", {headers: authHeader()})
+    .then((response) => {
+      if (response.data.accessToken) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+      }
+
+      return response.data;
+    });
 };
 
-export const postCreateItem = (item:Item) => {
+
+ const postCreateItem = (item:Item) => {
   return axios.post(API_URL + "products", item, { headers: authHeader() });
 };
 
+const userService = {
+  getItem,
+  postCreateItem
+
+};
+
+
+export default userService;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import { getPublicContdsfsdent } from "../services/user.service";
+import userService from "../services/user.service";
 
-const Home: React.FC = () => {
+const Home = () => {
   const [content, setContent] = useState<string>("");
 
   useEffect(() => {
-    getPublicContdsfsdent().then(
+    userService.getItem().then(
       (response:any) => {
         console.log(response)
         setContent(response.data);
