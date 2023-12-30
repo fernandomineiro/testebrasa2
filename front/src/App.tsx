@@ -65,7 +65,7 @@ const App: React.FC = () => {
             </li>
             <li className="nav-item">
               <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
+                Sair
               </a>
             </li>
           </div>
@@ -79,7 +79,7 @@ const App: React.FC = () => {
 
             <li className="nav-item">
               <Link to={"/register"} className="nav-link">
-                Sign Up
+                Cadastrar
               </Link>
             </li>
           </div>
